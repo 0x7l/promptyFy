@@ -1,10 +1,13 @@
 const { createLogger, format, transports } = require('winston');
 const chalk = require('chalk');
 const fs = require('fs');
+const path = require('path');
+
+const logDir = path.join(__dirname, '../logs');
 
 if (!fs.existsSync(logDir)) {
     fs.mkdirSync(logDir);
-}
+};
 
 const customFormat = format.printf(({ level, message, timestamp }) => {
     let coloredLevel;
