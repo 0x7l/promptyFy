@@ -1,4 +1,4 @@
-#🚀 PromptiFy — AI Prompt Storage Server
+# 🚀 PromptiFy — AI Prompt Storage Server
 
 PromptiFy is a lightweight, modular Node.js + MongoDB API server designed to securely store, categorize, and manage AI prompts for advanced users, developers, red teamers, and researchers.
 
@@ -102,11 +102,11 @@ Server will start on http://localhost:5000
   "tags": ["blogging", "content-creation"]
 }
 ```
--GET	/api/v1/prompts/:id	Get single prompt
+GET	/api/v1/prompts/:id	Get single prompt
 
--PUT	/api/v1/prompts/:id	Update prompt
+PUT	/api/v1/prompts/:id	Update prompt
 
--DELETE	/api/v1/prompts/:id	Delete prompt
+DELETE	/api/v1/prompts/:id	Delete prompt
 
 
 📄 License
