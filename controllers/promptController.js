@@ -1,4 +1,5 @@
 const Prompt = require('../models/promptModel');
+const logger = require('../utils/logger');
 
 const createPrompt = async (req, res) => {
     try {

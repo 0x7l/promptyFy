@@ -1,22 +1,46 @@
-const winston = require('winston');
+const { createLogger, format, transports } = require('winston');
+const chalk = require('chalk');
+const fs = require('fs');
 
-const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.printf(
-            ({ timestamp, level, message, stack }) => `${timestamp} ${level}: ${message}${stack ? '\n' + stack : ''}`
-        )
-    ),
-    transports: [new winston.transports.Console()],
+if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir);
+}
+
+const customFormat = format.printf(({ level, message, timestamp }) => {
+    let coloredLevel;
+    switch (level) {
+        case 'error':
+            coloredLevel = chalk.red.bold(`[${level.toUpperCase()}]`);
+            break;
+        case 'warn':
+            coloredLevel = chalk.yellow.bold(`[${level.toUpperCase()}]`);
+            break;
+        case 'info':
+            coloredLevel = chalk.blue.bold(`[${level.toUpperCase()}]`);
+            break;
+        case 'http':
+            coloredLevel = chalk.magenta.bold(`[${level.toUpperCase()}]`);
+            break;
+        case 'debug':
+            coloredLevel = chalk.gray(`[${level.toUpperCase()}]`);
+            break;
+        default:
+            coloredLevel = chalk.white(`[${level.toUpperCase()}]`);
+    }
+
+    return `${chalk.green(timestamp)} ${coloredLevel} ${message}`;
 });
 
-const loggerMiddleware = (req, res, next) => {
-    res.on('finish', () => {
-        logger.info(`${req.method} ${req.originalUrl} ${res.statusCode}`);
-    });
-    next();
-};
+const logger = createLogger({
+    level: 'debug',
+    format: format.combine(
+        format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+        format.errors({ stack: true }),
+        customFormat
+    ),
+    transports: [
+        new transports.Console()
+    ],
+});
 
-module.exports = loggerMiddleware;
-module.exports.logger = logger;
+module.exports = logger;
