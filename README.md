@@ -89,11 +89,11 @@ Server will start on http://localhost:5000
 
 **API Endpoints**
 
--Method	Endpoint	Description
+Method	        Endpoint	            Description
 
--GET	/api/v1/prompts	Get all prompts
+GET	            /api/v1/prompts	        Get all prompts
 
--POST	/api/v1/prompts	Create new prompt
+POST	        /api/v1/prompts	        Create new prompt
 ```
 {
   "title": "Blog Outline Generator",
@@ -102,11 +102,11 @@ Server will start on http://localhost:5000
   "tags": ["blogging", "content-creation"]
 }
 ```
-GET	/api/v1/prompts/:id	Get single prompt
+GET	        /api/v1/prompts/:id	        Get single prompt
 
-PUT	/api/v1/prompts/:id	Update prompt
+PUT	        /api/v1/prompts/:id	        Update prompt
 
-DELETE	/api/v1/prompts/:id	Delete prompt
+DELETE	    /api/v1/prompts/:id	        Delete prompt
 
 
 📄 License
