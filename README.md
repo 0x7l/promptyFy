@@ -30,24 +30,22 @@ A simple RESTful API to manage creative writing prompts using **Node.js**, **Exp
 
 ```
 git clone https://github.com/0x7l/promptiFy.git
+
 cd promptiFy
 ```
 
 2. Install Dependencies
-
-npm install
-
-3. Create .env File
-
-MONGO_URI=mongodb://localhost:27017/promptify
-PORT=5000
-
-4. Run the Server
 ```
-npm start
+npm install mongoose dotenv winston express
 ```
+
+3. Run the Server
+
+
+`npm start`
 
 Server will start on http://localhost:5000
+
 📚 API Endpoints
 🔸 Create a New Prompt
 
@@ -92,18 +90,7 @@ Body (JSON):
 ❌ Delete a Prompt
 
 DELETE /api/prompts/:id
-
-🗂️ Folder Structure
-
-.
-├── models
-│   └── prompt.js         # Mongoose schema
-├── controllers
-│   └── promptController.js # All CRUD logic
-├── routes
-│   └── promptRoutes.js     # Express route definitions
-├── app.js / server.js   # Entry point
-└── .env                 # Mongo URI & other config
+```
 
 🛡️ Error Handling
 
