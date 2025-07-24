@@ -75,7 +75,7 @@ cd promptiFy
 ### 2. Install Dependencies
 
 ```
-npm install mongoose dotenv winston express chalk
+npm install mongoose dotenv winston
 ```
 
 ### 3. Run the Server
