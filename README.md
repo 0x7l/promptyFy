@@ -28,35 +28,35 @@ A simple RESTful API to manage creative writing prompts using **Node.js**, **Exp
 
 ### 1. Clone the Repo
 
-`
+```
 git clone https://github.com/0x7l/promptiFy.git
 
 cd promptiFy
-`
+```
 
 2. Install Dependencies
 
-`
+```
 npm install mongoose dotenv winston express
-`
+```
 
 3. Run the Server
 
 
-`
+```
 npm start
-`
+```
 
 Server will start on http://localhost:5000
 
 **API Endpoints**
 
-Method	Endpoint	Description
+-Method	Endpoint	Description
 
-GET	/api/v1/prompts	Get all prompts
+-GET	/api/v1/prompts	Get all prompts
 
-POST	/api/v1/prompts	Create new prompt
-`
+-POST	/api/v1/prompts	Create new prompt
+```
 // Sample API Request
 {
   "title": "Blog Outline Generator",
@@ -64,12 +64,12 @@ POST	/api/v1/prompts	Create new prompt
   "category": "writing",
   "tags": ["blogging", "content-creation"]
 }
-`
-GET	/api/v1/prompts/:id	Get single prompt
+```
+-GET	/api/v1/prompts/:id	Get single prompt
 
-PUT	/api/v1/prompts/:id	Update prompt
+-PUT	/api/v1/prompts/:id	Update prompt
 
-DELETE	/api/v1/prompts/:id	Delete prompt
+-DELETE	/api/v1/prompts/:id	Delete prompt
 
 
 📄 License
