@@ -1,4 +1,4 @@
-# PromptiFy — AI Prompt Storage Server
+#🚀 PromptiFy — AI Prompt Storage Server
 
 PromptiFy is a lightweight, modular Node.js + MongoDB API server designed to securely store, categorize, and manage AI prompts for advanced users, developers, red teamers, and researchers.
 
@@ -72,13 +72,13 @@ git clone https://github.com/0x7l/promptiFy.git
 cd promptiFy
 ```
 
-2. Install Dependencies
+### 2. Install Dependencies
 
 ```
 npm install mongoose dotenv winston express chalk
 ```
 
-3. Run the Server
+### 3. Run the Server
 
 
 ```
